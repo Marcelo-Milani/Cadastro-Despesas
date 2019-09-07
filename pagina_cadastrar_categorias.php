@@ -1,7 +1,7 @@
 <?php
 
 require_once ("Categoria.php");
-require_once ("RepositorioDeCategoria.php");
+require_once ("RepositorioDeCategorias.php");
 
 try {
   if($_POST){

@@ -3,10 +3,10 @@
 require_once ("Categoria.php");
 require_once ("mysqli_provider.class.php");
 
-class RepositoriodeCategoria {
+class RepositoriodeCategorias {
     private $categoria;
 
-    public function RepositorioDeCategoria(){
+    public function RepositorioDeCategorias(){
         
     }
 
@@ -16,7 +16,7 @@ class RepositoriodeCategoria {
         $mysqli = $provider->provide();
     
         $stmt = $mysqli->prepare('INSERT INTO categoria (descricao) VALUES (?);');
-        $stmt->bind_param('ss', $categoria->descricao);
+        $stmt->bind_param('s', $categoria->descricao);
     
         $stmt->execute();
     }
@@ -27,7 +27,7 @@ class RepositoriodeCategoria {
         $mysqli = $provider->provide();
     
         $stmt = $mysqli->prepare('UPDATE categoria SET (descricao=?) WHERE id=?;');
-        $stmt->bind_param('ssi', $categoria->descricao);
+        $stmt->bind_param('s', $categoria->descricao);
     
         return $stmt->execute(); 
     }
@@ -64,7 +64,7 @@ class RepositoriodeCategoria {
         {
             $categoria = new Categoria();
             $categoria->id = $id;
-            $categoria->descricao = $descsricao;
+            $categoria->descricao = $descricao;
             
             $result[] = $categoria;
         }

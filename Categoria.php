@@ -2,13 +2,9 @@
 
 class Categoria{
     public $id;
-    public $categoria;
+    public $descricao;
 
-    public function __construct ($id, $categoria) {
-        $this->id = $id;
-        $this->categoria = $categoria;
-    }
-
+   
     public function setId($id){
         $this->id = $id;
     }    
